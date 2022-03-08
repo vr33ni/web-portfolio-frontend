@@ -1,0 +1,206 @@
+$primary: #014a62 !default;
+
+$header-height: 56px;
+$sidebar-width: 280px;
+
+.bg-light {
+  background: #f9f9f9
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+/* =================================== */
+/*    Sections
+/* =================================== */
+.section-padding {
+  padding: 60px 0;
+}
+
+.sub-section-title {
+  text-align: center;
+}
+
+.sub-section-title h3 {
+  color: #222222;
+  position: relative;
+  margin-bottom: 50px;
+  line-height: 44px;
+}
+
+.sub-section-title h3:before,
+.sub-section-title h3:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: #002e44;
+}
+
+.sub-section-title h3:before {
+  bottom: -11px;
+  width: 100px;
+  height: 2px;
+}
+
+.sub-section-title h3:after {
+  bottom: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 8px;
+}
+
+.sub-section-title p {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* =================================== */
+/*    About Area Section
+/* =================================== */
+
+.about-area .img-about img {
+  outline: 10px solid #002e44;
+  outline-offset: -54px;
+  border: 42px solid transparent;
+  border-width: 0px 85px 0px 10px;
+}
+.about-area .about-details .about-list li {
+  display: flex;
+  margin-bottom: 10px;
+}
+.about-area .about-details .about-list li span {
+  width: calc(100% - 130px);
+}
+.about-area .about-details .about-list li span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  width: 130px;
+}
+
+/* =================================== */
+/*   Resume Section
+/* =================================== */
+
+.resume .sub-section-title {
+  text-align: left;
+}
+.resume .sub-section-title h3::after,
+.resume .sub-section-title h3::before {
+  left: 0;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.tag {
+  height: 30px;
+  float: left;
+  margin-right: 10px;
+  background-color: #eee;
+  border: 1px solid #eee;
+  margin-top: 10px;
+  line-height: 30px;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.tag:hover {
+  background-color: #ffffff;
+  border: 1px solid black;
+}
+
+/* =================================== */
+/*   Timeline Section
+/* =================================== */
+.center-item {
+  align-items: center !important; // for centering the month/date
+  display: flex !important; // for centering the month/date
+}
+.timeline-item {
+  .item {
+    border-left: 5px solid #ccd5db;
+    border-radius: 6px;
+    padding: 20px 0 20px 15px;
+    position: relative;
+    align-items: center !important; // for centering the month/date
+    display: flex !important; // for centering the month/date
+  }
+
+  .bubble {
+    position: relative;
+    background: white;
+    border: 1px solid #9fa7b3;
+    max-width: 90%;
+    padding: 10px;
+    font-family: arial;
+    margin: 0 auto;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+  .bubble:after,
+  .bubble:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .bubble:after {
+    border-color: rgba(255, 255, 204, 0);
+    border-right-color: white;
+    border-width: 15px;
+    margin-top: -15px;
+  }
+  .bubble:before {
+    border-color: rgba(255, 204, 0, 0);
+    border-right-color: #9fa7b3;
+    border-width: 16px;
+    margin-top: -16px;
+  }
+
+  .drop-shadow {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
+  }
+
+  .box-shadow {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .date-item {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .title-item {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .sub-title-item {
+    font-style: italic;
+    font-size: 14px;
+  }
+  .description-item {
+    font-weight: 100;
+    margin: 0;
+  }
+  .dot {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    left: -10px;
+    //top: 60px; // remove this for aligning the dot in the middle
+  }
+}
