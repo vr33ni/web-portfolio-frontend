@@ -4,7 +4,7 @@
       <AboutMeCard :skill-tags="skillTags" :profile-img="profileImg" />
     </section>
     <section class="resume mb-50">
-  <hr class="styleShadow" />
+      <hr class="styleShadow" />
       <h2 id="resume">Resume</h2>
       <hr class="styleShadow" />
       <Resume
@@ -17,6 +17,12 @@
         :skill-tags="skillTags"
       />
     </section>
+    <section>
+      <hr class="styleShadow" />
+      <h2 id="privacy">Privacy policy</h2>
+      <hr class="styleShadow" />
+      <PrivacyPolicy />
+    </section>
   </div>
 </template>
 
@@ -25,6 +31,7 @@ import { useStore } from "vuex";
 import { computed, ref } from "vue";
 import AboutMeCard from "./AboutMeCard.vue";
 import Resume from "./Resume.vue";
+import PrivacyPolicy from "./PrivacyPolicy.vue";
 
 const store = useStore();
 const colorDots = ref("#2da1bf");
@@ -44,8 +51,6 @@ const profileImg = computed(() => {
 //computed language skills
 
 const skillTags = computed(() => {
-  console.log("skills", store.state.programmingSkills.programmingSkills);
-
   return store.state.programmingSkills.programmingSkills !== null
     ? store.state.programmingSkills.programmingSkills
     : null;

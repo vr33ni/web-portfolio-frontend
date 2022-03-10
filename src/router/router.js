@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { vuexOidcCreateRouterMiddleware } from "vuex-oidc";
 import store from "../store";
 import Home from "../components/main/Home.vue";
+import PrivacyPolicy from "../components/main/PrivacyPolicy.vue";
 
 // async function checkAuth(to, from, next) {
 //     const isAdminModeEnabled = computed(() => store.getters['users/getAdminode'];
@@ -30,22 +31,27 @@ const router = createRouter({
       }
       }
     },
-    {
-      path: "/resume",
-      name: "resume",
-      component: Home,
-      beforeEnter: (to, from, next) => 
-      {
-        if (store.state.timelineProfessional.resumeProfileImg === null) {
-          store.dispatch("timelineProfessional/loadImage"),
-          store.dispatch("timelineProfessional/getResumeTimelineEntries"),
-          store.dispatch("languageSkills/getLanguageSkills"),
-          store.dispatch("programmingSkills/getProgrammingSkills"),
-          store.dispatch("timelineEducation/getResumeTimelineEntries")
+    // {
+    //   path: "/resume",
+    //   name: "resume",
+    //   component: Home,
+    //   beforeEnter: (to, from, next) => 
+    //   {
+    //     if (store.state.timelineProfessional.resumeProfileImg === null) {
+    //       store.dispatch("timelineProfessional/loadImage"),
+    //       store.dispatch("timelineProfessional/getResumeTimelineEntries"),
+    //       store.dispatch("languageSkills/getLanguageSkills"),
+    //       store.dispatch("programmingSkills/getProgrammingSkills"),
+    //       store.dispatch("timelineEducation/getResumeTimelineEntries")
 
-          .then(next);
-      }
-      }
+    //       .then(next);
+    //   }
+    //   }
+    // },
+    {
+      path: "/privacy",
+      name: "privacy",
+      component: PrivacyPolicy,
     },
   ],
 });

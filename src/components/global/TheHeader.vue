@@ -55,14 +55,20 @@
               <li><a class="dropdown-item" href="#edu">Education</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">Services</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
+          </li>
+           <li class="nav-item">
+               <!-- <router-link to="#privacy" class="nav-item nav-link" active-class="active" exact>
+        Privacy policy
+      </router-link> -->
+            <a class="nav-link" href="#privacy">Privacy policy</a>
           </li>
         </ul>
       </div>
