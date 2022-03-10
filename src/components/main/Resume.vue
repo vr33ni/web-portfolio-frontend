@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="col-lg-4 mt-3 mb-3">
-        <Skills :skill-tags="skillTags" />
+        <!-- <Skills :skill-tags="skillTags" /> -->
       </div>
     </div>
   </div>
