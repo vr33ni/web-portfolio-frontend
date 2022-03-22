@@ -5,7 +5,6 @@ Frontend: Using Vue3 + Vite.
 Backend: Using NodeJs + Firebase as a database.
 
 Notes:
-
 Project uses vuex store, axios and vue router.
 Basic unit testing is being set up.
 Plan to include e2e testing using nightwatch in the future.
