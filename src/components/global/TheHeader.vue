@@ -30,7 +30,6 @@
 
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-    
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -59,13 +58,15 @@
             <a class="nav-link" href="#">Services</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+           
+             <a class="nav-link" href="#">Blog</a>
+            
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
-           <li class="nav-item">
-               <!-- <router-link to="#privacy" class="nav-item nav-link" active-class="active" exact>
+          <li class="nav-item">
+            <!-- <router-link to="#privacy" class="nav-item nav-link" active-class="active" exact>
         Privacy policy
       </router-link> -->
             <a class="nav-link" href="#privacy">Privacy policy</a>
@@ -84,7 +85,7 @@ import { useRoute } from "vue-router";
 const store = useStore();
 
 const logo = computed(() => {
-  return store.state.branding.logo !== null ? store.state.branding.logo : null;
+  return store.state.branding !== undefined ? store.state.branding.logo : null;
 });
 
 const emit = defineEmits(["hamburgerToggle"]);

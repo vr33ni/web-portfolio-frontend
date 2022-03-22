@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -31,8 +32,15 @@
     "vuex-oidc": "^3.10.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
     "@vitejs/plugin-vue": "^1.9.0",
     "@vue/compiler-sfc": "^3.1.1",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/vue3-jest": "^27.0.0-alpha.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^27.5.1",
+    "chromedriver": "^99.0.0",
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -40,6 +48,9 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-vue": "^7.19.1",
     "execa": "latest",
+    "geckodriver": "^3.0.1",
+    "jest": "^27.5.1",
+    "nightwatch": "^2.0.10",
     "sass": "1.32.0",
     "vite": "^2.5.10"
   }

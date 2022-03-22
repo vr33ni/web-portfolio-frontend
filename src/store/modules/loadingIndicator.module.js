@@ -1,40 +1,53 @@
 export default {
   namespaced: true,
+  
   state() {
     return {
-      tasks: [],
-      nextId: 0,
+      loading: false,
+      requestsPending: 0,
     };
   },
   mutations: {
-    remove(state, { id }) {
-      const index = state.tasks.findIndex((v) => v.id === id);
-      if (index > -1) {
-        state.tasks.splice(index, 1);
+    show(state) {
+      state.loading = true;
+    },
+    hide(state) {
+      state.loading = false;
+    },
+    pending(state) {
+      if (state.requestsPending === 0) {
+        this.commit("tasks/show");
       }
+
+      state.requestsPending++;
     },
-    add(state, task) {
-      state.tasks.unshift(task);
-    },
-    increaseNextId(state) {
-      state.nextId += 1;
+    done(state) {
+      if (state.requestsPending >= 1) {
+        state.requestsPending--;
+      }
+
+      if (state.requestsPending <= 0) {
+        this.commit("tasks/hide");
+      }
     },
   },
   actions: {
-    remove: ({ commit }, { id }) => {
-      commit("remove", { id });
+    show({ commit }) {
+      commit("show");
     },
-    add: ({ commit, state }, { title = "" }) => {
-      const task = {
-        id: state.nextId,
-        title,
-      };
-      commit("increaseNextId");
-      commit("add", task);
-      return task;
+    hide({ commit }) {
+      commit("hide");
+    },
+    pending({ commit }) {
+      commit("pending");
+    },
+    done({ commit }) {
+      commit("done");
     },
   },
   getters: {
-    all: (state) => state.tasks,
+    isLoading(state) {
+      return state.loading;
+    },
   },
 };

@@ -13,6 +13,26 @@ window.$ = $;
 window.bootstrap = bootstrap;
  
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL;
+// axios.interceptors.request.use((config) => {
+//     // trigger 'loading=true' event here
+//     console.log("is loading")
+//     return config;
+//   }, (error) => {
+//     // trigger 'loading=false' event here
+//     return Promise.reject(error);
+//   });
+
+//   axios.interceptors.response.use((response) => {
+//     // trigger 'loading=false' event here
+//     console.log("is done loading")
+//     return response;
+//   }, (error) => {
+//     // trigger 'loading=false' event here
+//     return Promise.reject(error);
+//   });
+
+
+
 const app = createApp(App);
 
 app.component("FontAwesomeIcon", FontAwesomeIcon);

@@ -32,8 +32,15 @@ import { computed, ref } from "vue";
 import AboutMeCard from "./AboutMeCard.vue";
 import Resume from "./Resume.vue";
 import PrivacyPolicy from "./PrivacyPolicy.vue";
+import { mapGetters } from 'vuex'
 
 const store = useStore();
+
+
+const isAuthenticated = computed(() => {
+     return store.getters.oidcIsAuthenticated
+});
+   
 const colorDots = ref("#2da1bf");
 const uniqueTimeline = ref({
   type: Boolean,
@@ -43,16 +50,17 @@ const dateLocale = ref("");
 const messageWhenNoItems = ref("No articles found.");
 
 const profileImg = computed(() => {
-  return store.state.timelineProfessional.resumeProfileImg !== null
-    ? store.state.timelineProfessional.resumeProfileImg
+  console.log("prof image", store.state.image.items.items)
+  return store.state.image.items.items !== null
+    ? store.state.image.items.items
     : null;
 });
 
 //computed language skills
 
 const skillTags = computed(() => {
-  return store.state.programmingSkills.programmingSkills !== null
-    ? store.state.programmingSkills.programmingSkills
+  return store.state.programmingSkills.items.items !== null
+    ? store.state.programmingSkills.items.items
     : null;
 });
 
@@ -65,9 +73,9 @@ function GetSortedOrderByNestedObjProp(prop, arr) {
 }
 
 const timelineItems = computed(() => {
-  if (store.state.timelineProfessional.timelineEntries != null) {
+  if (store.state.timelineProfessional.items.items != null) {
     const professionalExperience =
-      store.state.timelineProfessional.timelineEntries;
+      store.state.timelineProfessional.items.items;
     const array = []; // since the data from firebase is retrieved as an object of nested objects, we will transoform it to an array that can be looped over
     Object.keys(professionalExperience).forEach((key) => {
       array.push(professionalExperience[key]);
@@ -76,8 +84,8 @@ const timelineItems = computed(() => {
   }
 });
 const timelineItemsEducation = computed(() => {
-  if (store.state.timelineEducation.timelineEntries != null) {
-    const education = store.state.timelineEducation.timelineEntries;
+  if (store.state.timelineEducation.items.items != null) {
+    const education = store.state.timelineEducation.items.items;
     const array = []; // since the data from firebase is retrieved as an object of nested objects, we will transoform it to an array that can be looped over
     Object.keys(education).forEach((key) => {
       array.push(education[key]);

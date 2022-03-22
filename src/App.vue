@@ -32,7 +32,7 @@ const visible = ref(true);
 const smallScreenWidth = ref(720);
 const extraSmallScreenWidth = ref(375);
 
-const isSmallScreen = computed(() => store.state.screenSize.isSmallScreen);
+const isSmallScreen = computed(() => store.state.screenSize !== undefined ?  store.state.screenSize.isSmallScreen : false);
 const getBootstrapBreakpointLG = computed(() =>
   getComputedStyle(document.documentElement).getPropertyValue("--breakpoint-lg")
 );
@@ -50,6 +50,7 @@ const init = (e) => {
     visible.value = true;
   }
 };
+
 
 onMounted(() => {
   init();

@@ -12,6 +12,9 @@ import "vue-loading-overlay/dist/vue-loading.css";
 import { useStore } from "vuex";
 
 const store = useStore();
-const tasks = computed(() => store.getters["tasks/all"]);
-const isLoading = computed(() => tasks.value.length > 0);
+//const isLoading = computed(() => store.getters["tasks/isLoading"]);
+console.log("loading component ", store.getters['languageSkills/all'], store.getters['tasks/all'])
+
+const isLoading=computed(()=>store.state.tasks.loading ); //store.getters['tasks/all'])
+ // const isLoading = computed(() => tasks.value.length > 0);
 </script>

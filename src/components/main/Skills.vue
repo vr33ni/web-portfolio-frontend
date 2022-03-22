@@ -1,19 +1,19 @@
 <template>
-     <div class="card" style="border: 0px">
-      <div class="card-body">
-         <h5 class="card-title">Skills</h5>
-        <div
-          v-for="tag in skillTags"
-          :key="tag.id"
-          class="tag"
-          v-on:click="learnMore(tag)"
-          :title="tag.id"
-        >
-          {{ tag.data.name }}
-        </div>
+  <div class="card" style="border: 0px">
+    <div class="card-body">
+      <h5 id="skills" class="card-title">Programming languages & tools</h5>
+      <div
+        v-for="tag in skillTags"
+        :key="tag.id"
+        class="tag"
+        v-on:click="learnMore(tag)"
+        :title="tag.id"
+      >
+        {{ tag.data.name }}
       </div>
     </div>
- </template>
+  </div>
+</template>
 
 
 <script setup>
@@ -36,7 +36,7 @@ const instagram = ref("https://www.instagram.com/vr33ni");
 function popoverConfig(tag) {
   return {
     html: true,
-    
+
     title: () => {
       console.log(tag);
       return tag.name;
@@ -55,7 +55,6 @@ function popoverConfig(tag) {
 </script>
 
 <style lang="scss" scoped>
-
 .tag {
   height: 30px;
   float: left;
