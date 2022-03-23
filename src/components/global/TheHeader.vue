@@ -85,7 +85,7 @@ import { useRoute } from "vue-router";
 const store = useStore();
 
 const logo = computed(() => {
-  return store.state.branding !== undefined ? store.state.branding.logo : null;
+  return store.state.branding !== undefined ? store.state.branding.items.items : null;
 });
 
 const emit = defineEmits(["hamburgerToggle"]);

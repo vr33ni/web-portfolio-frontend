@@ -63,46 +63,6 @@
           </div>
         </div>
       </div>
-    <!-- </section> -->
-    <!-- <div class="col-md-6">
-    <img class="card-img-top" :src="profileImg" alt="Profile image cap" />
-    </div>
-    <div class="card-body">
-   <h5 class="card-title">About me</h5> 
-      <p class="card-text">
-        I am a software engineer with an interdisciplinary background, always
-        eager to seek new challenges.
-      </p>
-      <hr />
-      <h5 class="card-title">Contact</h5>
-      <a :href="`${linkedin}`" class="card-link" target="_blank">
-        <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-      </a>
-      <a :href="`mailto:${email}`" class="card-link">
-        <font-awesome-icon :icon="['fas', 'envelope']" />
-      </a>
-      <a :href="`tel:+${mobile}`" class="card-link">
-        <font-awesome-icon :icon="['fas', 'phone']" />
-      </a>
-      <a :href="`${github}`" class="card-link" target="_blank">
-        <font-awesome-icon :icon="['fab', 'github']" />
-      </a>
-      <a :href="`${instagram}`" class="card-link" target="_blank">
-        <font-awesome-icon :icon="['fab', 'instagram']" />
-      </a>
-      <hr />
-      <h5 class="card-title" id="skills">Skills</h5>
-
-      <div
-        v-for="tag in skillTags"
-        :key="tag.id"
-        class="tag"
-        v-on:click="learnMore(tag)"
-        :title="tag.id"
-      >
-        {{ tag.data.name }}
-      </div>
-    </div> -->
 </template>
 
 
@@ -110,54 +70,20 @@
 import { toRefs, ref, defineProps } from "vue";
 const props = defineProps({
   profileImg: String,
-  skillTags: Object,
 });
 
-// v-b-popover.hover.top="popoverConfig(tag)"
 
-const { profileImg, skillTags } = toRefs(props);
+const { profileImg } = toRefs(props);
 
-const hover = ref(false);
-const mobile = ref("4550371448");
+ const mobile = ref("4550371448");
 const email = ref("v.m.s.lechner@gmail.com");
 const linkedin = ref("https://www.linkedin.com/in/verena-lechner/");
 const github = ref("https://www.github.com/vr33ni");
 const instagram = ref("https://www.instagram.com/vr33ni");
 
-function popoverConfig(tag) {
-  return {
-    html: true,
-    title: () => {
-      return tag.name;
-    },
-    content: () => {
-      return (
-        "Proficiency: " + tag.proficiency + "<br />Projects: " + tag.projects
-      );
-    },
-  };
-  function learnMore(tag) {
-    this.hover = true;
-    console.log("learn more about ", tag.proficiency);
-  }
-}
+
 </script>
 
 <style lang="scss" scoped>
 
-
-// .tooltip {
-//   width: 100px;
-// }
-// .tooltip .tooltip-inner{
-//   max-width: 500px !important;
-//   width: 400px !important;
-// }
-
-// .tooltip-inner {
-//   text-align: left!important;
-// }
-// .my-tooltip-class {
-//   text-align: left !important;
-// }
 </style>

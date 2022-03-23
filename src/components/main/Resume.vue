@@ -88,12 +88,6 @@ const {
 
 // v-b-popover.hover.top="popoverConfig(tag)"
 
-const hover = ref(false);
-const mobile = ref("4550371448");
-const email = ref("v.m.s.lechner@gmail.com");
-const linkedin = ref("https://www.linkedin.com/in/verena-lechner/");
-const github = ref("https://www.github.com/vr33ni");
-const instagram = ref("https://www.instagram.com/vr33ni");
 const uniqueYear = ref("true");
 const order = ref("desc");
 const uniqueTimeline = ref({

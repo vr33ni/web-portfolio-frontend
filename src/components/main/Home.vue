@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <section class="about-area section-padding bg-light mb-50">
-      <AboutMeCard :skill-tags="skillTags" :profile-img="profileImg" />
+      <AboutMeCard :profile-img="profileImg" />
     </section>
     <section class="resume mb-50">
       <hr class="styleShadow" />
@@ -50,10 +50,9 @@ const dateLocale = ref("");
 const messageWhenNoItems = ref("No articles found.");
 
 const profileImg = computed(() => {
-  console.log("prof image", store.state.image.items.items)
   return store.state.image.items.items !== null
     ? store.state.image.items.items
-    : null;
+    : "";
 });
 
 //computed language skills

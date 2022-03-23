@@ -1,8 +1,8 @@
 # Portfolio in the form of a web application
 
-Frontend: Using Vue3 + Vite.
+**Frontend** (this repo):  Using Vue3 + Vite.
 
-Backend: Using NodeJs + Firebase as a database.
+**Backend** ([Github repo](https://github.com/vr33ni/web-portfolio-backend)): Using NodeJs + Firebase as a database.
 
 Notes:
 Project uses vuex store, axios and vue router.
@@ -19,3 +19,8 @@ run `npm run build`
 
 run `npm run dev`
 
+## Todo
+
+1. Tests (Jest+E2E Nightwatch)
+2. Cleanup
+3. Rework authenticaation (as for now, only authenticated users have access, but this should only be for a minor part of the app, the rest should stay public)

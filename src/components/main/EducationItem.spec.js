@@ -8,7 +8,7 @@ beforeEach(() => {
   languageGetter = jest.spyOn(window.navigator, 'language', 'get')
 })
 
-test("education item is default color", () => {
+test("education item dot is default color", () => {
   languageGetter.mockReturnValue('de')
   var wrapper = shallowMount(EducationItem, {
     propsData: {
